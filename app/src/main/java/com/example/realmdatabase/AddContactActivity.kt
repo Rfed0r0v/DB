@@ -14,6 +14,7 @@ class AddContactActivity : AppCompatActivity(), MainAction {
     private val presenter: Presenter by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
 
         presenter.initAction(this)
