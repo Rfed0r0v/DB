@@ -15,24 +15,123 @@ android {
         versionCode 1
         versionName "1.0"
 
+        resConfigs "ru"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+        def someProperty1 = "https://url.com"
+        def someProperty2 = false
+
+        def should_encrypt_prefs_field_name = "SHOULD_ENCRYPT_PREFS"
+
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [
+                    crashlyticsCollectionEnabled: "true",
+                    applicationIdSuffix         : "",
+                    someProperty1               : someProperty1,
+                    someProperty2               : someProperty2
+            ]
+            buildConfigField "String", "APPLICATION_ID_SUFFIX", "\"\""
+            buildConfigField "boolean", "IS_ANALYTICS_ENABLED", "true"
+            buildConfigField "boolean", should_encrypt_prefs_field_name, "true"
+        }
+        staging {
+            debuggable true
+            manifestPlaceholders = [
+                    crashlyticsCollectionEnabled: "false",
+                    applicationIdSuffix         : ".debug",
+                    someProperty1               : someProperty1,
+                    someProperty2               : someProperty2
+            ]
+            applicationIdSuffix ".debug"
+            versionNameSuffix '-debug'
+            buildConfigField "String", "APPLICATION_ID_SUFFIX", "\".debug\""
+            buildConfigField "boolean", "IS_ANALYTICS_ENABLED", "true"
+            buildConfigField "boolean", should_encrypt_prefs_field_name, "false"
+        }
+        debug {
+            debuggable true
+            manifestPlaceholders = [
+                    crashlyticsCollectionEnabled: "false",
+                    applicationIdSuffix         : ".debug",
+                    someProperty1               : someProperty1,
+                    someProperty2               : someProperty2
+            ]
+            applicationIdSuffix ".debug"
+            versionNameSuffix '-debug'
+            buildConfigField "String", "APPLICATION_ID_SUFFIX", "\".debug\""
+            buildConfigField "boolean", "IS_ANALYTICS_ENABLED", "true"
+            buildConfigField "boolean", should_encrypt_prefs_field_name, "false"
         }
     }
+
+    sourceSets {
+        release {
+            java.srcDirs = ['src/release/java']
+            res.srcDirs = ['src/release/res']
+        }
+        staging {
+            manifest.srcFile 'src/debug/AndroidManifest.xml'
+            java.srcDirs = ['src/debug/java']
+            res.srcDirs = ['src/debug/res']
+        }
+        debug {
+            manifest.srcFile 'src/debug/AndroidManifest.xml'
+            java.srcDirs = ['src/debug/java']
+            res.srcDirs = ['src/debug/res']
+        }
+    }
+
+    // each product flavor you configure to one of the flavor dimensions.
+    flavorDimensions 'api', 'version'
+
+    productFlavors {
+        demo {
+            // Assigns this product flavor to the 'version' flavor dimension.
+            dimension 'version'
+        }
+
+        full {
+            dimension 'version'
+        }
+
+        minApi24 {
+            // Assigns this flavor to the 'api' dimension.
+            dimension 'api'
+            minSdkVersion '24'
+            versionNameSuffix "-minApi24"
+        }
+
+        minApi23 {
+            // Assigns this flavor to the 'api' dimension.
+            dimension 'api'
+            minSdkVersion '23'
+            versionNameSuffix "-minApi23"
+        }
+    }
+
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
+
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError true
+    }
+
     buildFeatures {
         viewBinding true
+        dataBinding true
     }
 }
 
