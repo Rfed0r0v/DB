@@ -44,12 +44,10 @@ class ContactsAdapter(private val onContactClicked: (Int) -> Unit) :
         val note = getItem(position)
         holder.bind(note)
 
-        holder.itemView.findViewById<ImageView>(R.id.tvEdit).setOnClickListener { onContactClicked (position)}
-//        holder.itemView.setOnClickListener { onContactClicked ( position )}
-//        notifyDataSetChanged()
+        holder.itemView.findViewById<ImageView>(R.id.tvEdit)
+            .setOnClickListener { onContactClicked(position) }
 
     }
-
 
 
     fun setData(allContacts: List<Contact>) {

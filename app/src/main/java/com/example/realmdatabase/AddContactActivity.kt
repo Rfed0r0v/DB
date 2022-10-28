@@ -1,12 +1,9 @@
-package com.example.realmdatabase.ui
+package com.example.realmdatabase
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.realmdatabase.MainActivity
-import com.example.realmdatabase.Presenter
-import com.example.realmdatabase.Contact
 import com.example.realmdatabase.databinding.ActivityAddContactBinding
 import com.example.realmdatabase.presenter.MainAction
 import org.koin.android.ext.android.inject

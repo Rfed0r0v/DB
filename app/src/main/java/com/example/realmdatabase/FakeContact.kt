@@ -1,4 +1,4 @@
-package com.example.realmdatabase.fakeObjects
+package com.example.realmdatabase
 
 data class FakeContact(
     val name: String,
