@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Roman/AndroidStudioProjects/DB/app/src/main/res/drawable/edit.xml" value="0.1805" />
         <entry key="..\:/Users/Roman/AndroidStudioProjects/DB/app/src/main/res/layout/activity_add_contact.xml" value="0.365625" />
+        <entry key="..\:/Users/Roman/AndroidStudioProjects/DB/app/src/main/res/layout/activity_edit_contact.xml" value="0.365625" />
         <entry key="..\:/Users/Roman/AndroidStudioProjects/DB/app/src/main/res/layout/activity_main.xml" value="0.365625" />
         <entry key="..\:/Users/Roman/AndroidStudioProjects/DB/app/src/main/res/layout/item_contact.xml" value="0.365625" />
         <entry key="app/src/main/res/layout/activity_add_contact.xml" value="0.37604166666666666" />

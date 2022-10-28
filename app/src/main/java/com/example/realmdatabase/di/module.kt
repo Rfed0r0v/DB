@@ -2,7 +2,7 @@ package com.example.realmdatabase.di
 
 import com.example.realmdatabase.ContactRepository
 import com.example.realmdatabase.ContactRepositoryImpl
-import com.example.realmdatabase.MainViewModel
+import com.example.realmdatabase.ui.MainViewModel
 import com.example.realmdatabase.Presenter
 import io.realm.Realm
 import io.realm.RealmConfiguration

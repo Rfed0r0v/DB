@@ -1,8 +1,12 @@
-package com.example.realmdatabase
+package com.example.realmdatabase.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.realmdatabase.MainActivity
+import com.example.realmdatabase.Presenter
+import com.example.realmdatabase.Contact
 import com.example.realmdatabase.databinding.ActivityAddContactBinding
 import com.example.realmdatabase.presenter.MainAction
 import org.koin.android.ext.android.inject
@@ -20,7 +24,7 @@ class AddContactActivity : AppCompatActivity(), MainAction {
 
         binding = ActivityAddContactBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        binding.etName.requestFocus()
         binding.btnSave.setOnClickListener {
             with(binding) {
                 presenter.addContact(
@@ -28,6 +32,9 @@ class AddContactActivity : AppCompatActivity(), MainAction {
                     surname = etSurname.text.toString(),
                     number = etNumber.text.toString()
                 )
+
+                startActivity(Intent(this@AddContactActivity, MainActivity::class.java))
+                finish()
             }
         }
     }

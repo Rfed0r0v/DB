@@ -4,7 +4,6 @@ import io.realm.RealmModel
 import io.realm.annotations.PrimaryKey
 import io.realm.annotations.RealmClass
 import io.realm.annotations.Required
-import java.util.*
 
 @RealmClass
 open class Contact : RealmModel {
@@ -12,11 +11,11 @@ open class Contact : RealmModel {
     var id: String = ""
 
     @Required
-    var name: String? = ""
+    var name: String = ""
 
     @Required
-    var surname: String? = ""
+    var surname: String = ""
 
     @Required
-    var number: String? = ""
+    var number: String = ""
 }

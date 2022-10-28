@@ -5,4 +5,5 @@ import com.example.realmdatabase.Contact
 interface MainAction {
 
     fun onAddContact(contacts: List<Contact>)
+
 }

@@ -9,7 +9,7 @@
     app:cardCornerRadius="4dp">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="326dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:orientation="vertical">
@@ -29,6 +29,19 @@
             android:textSize="13sp"
             tools:text="+7 999 999 99 99" />
 
+
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/tvEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_twotone_edit_24"
+        android:layout_gravity="center|end"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        tools:text="Delete" />
+
 
 </androidx.cardview.widget.CardView>

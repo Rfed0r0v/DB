@@ -10,29 +10,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="Имя" />
+        android:hint="Имя"
+        android:inputType="text"
+        android:singleLine="true"
+        android:nextFocusDown="@id/etSurname"/>
 
     <EditText
         android:id="@+id/etSurname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="Фамилия" />
+        android:hint="Фамилия"
+        android:singleLine="true"
+        android:nextFocusDown="@id/etNumber"/>
 
     <EditText
         android:id="@+id/etNumber"
         android:layout_width="match_parent"
-
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="Телефончик" />
+        android:singleLine="true"
+        android:hint="Телефончик"
+        />
 
     <Button
-        android:id="@+id/btnSave"
+        android:id="@+id/btnSaveChanges"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="64dp"
         android:layout_marginTop="8dp"
         android:text="Сохранить контакт" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="64dp"
+        android:layout_marginTop="8dp"
+        android:text="Удалить" />
 
 </LinearLayout>
