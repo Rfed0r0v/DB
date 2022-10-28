@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RealmDatabase</string>
+    <string name="content_description">There is content description</string>
 </resources>

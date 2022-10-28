@@ -15,20 +15,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
     private lateinit var binding: ActivityMainBinding
 
     private val defaultLifecycleObserver = object : DefaultLifecycleObserver {
-        override fun onCreate(owner: LifecycleOwner) {
-            super.onCreate(owner)
-            Log.d("Main", "DefaultLifecycleObserver - onCreate")
-        }
 
-        override fun onStart(owner: LifecycleOwner) {
-            super.onStart(owner)
-            Log.d("Main", "DefaultLifecycleObserver - onStart")
-        }
-
-        override fun onResume(owner: LifecycleOwner) {
-            super.onResume(owner)
-            Log.d("Main", "DefaultLifecycleObserver - onResume")
-        }
     }
 
     private val viewModel : MainViewModel by viewModel()
