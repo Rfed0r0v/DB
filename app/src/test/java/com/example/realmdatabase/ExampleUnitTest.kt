@@ -15,7 +15,7 @@ class ExampleUnitTest {
     val contact = FakeContact(
         name = "Name1",
         surname = "Surname1",
-        phone = "+88000000001"
+        phone = "+88000000002"
     )
     val contactRepository = FakeContactRepository()
 
