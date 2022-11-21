@@ -10,6 +10,7 @@ class EditContactActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityEditContactBinding
 
+    // Init viewModel with KTX
     private val viewModel by viewModel<MainViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +20,7 @@ class EditContactActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.etName.requestFocus()
+
         val idContactToEdit: String = intent.getStringExtra("id").toString()
 
         binding.etName.setText(viewModel.getContactWithId(idContactToEdit)?.name)

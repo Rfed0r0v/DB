@@ -51,11 +51,9 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
         }
 
         binding.rvContacts.adapter = adapter
-
         binding.fabAddContact.setOnClickListener {
             startActivity(Intent(this, AddContactActivity::class.java))
         }
-
     }
 
     override fun onDestroy() {
